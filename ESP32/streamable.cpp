@@ -1,3 +1,5 @@
+// TODO: Shouldn't make use of String
+
 #include <Arduino.h>
 
 enum StreamableType {SOUND, STREAM, SAY, NIL};
