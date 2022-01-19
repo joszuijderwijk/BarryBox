@@ -56,9 +56,6 @@ String soundboard_channel;
 String stream_channel;
 String tts_channel;
 
-// Soundboard
-#define SOUNDBOARD "http://barrybox.hetberenhuis.nl/soundboard/"
-
 // Welcome
 StreamableType W_TYPE = StreamableType::SOUND;
 char* W_TEXT = "gamecube";
