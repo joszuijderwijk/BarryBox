@@ -4,7 +4,7 @@
 	var client = params[0];
 
 	if(client == "")
-		client = 'jos';
+		client = default_user;
 		
 	startInterval(30, function() {
 		$.ajax({

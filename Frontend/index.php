@@ -18,14 +18,19 @@
     <!-- Custom styles for this template -->
     <link href="../css/sticky-footer.css" rel="stylesheet">
 	
+	<?php include_once ('config.php'); ?>
+	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		var default_user = "<?php echo DEFAULT_USER; ?>";
+	</script>
+	
 	<script src = "../js/get_status.js"></script>
 	<script src="../js/form.js"></script>
+	
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-	
-
 	
   </head>
 
