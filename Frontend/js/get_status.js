@@ -9,7 +9,7 @@
 	startInterval(30, function() {
 		$.ajax({
 			type: 'POST',
-			url: '../../get_status.php',
+			url: '../../include/get_status.php',
 			data: {
 				client: client
 			},

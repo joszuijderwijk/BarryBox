@@ -18,7 +18,7 @@
     <!-- Custom styles for this template -->
     <link href="../css/sticky-footer.css" rel="stylesheet">
 	
-	<?php include_once ('config.php'); ?>
+	<?php include_once ('include/config.php'); ?>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	
@@ -60,7 +60,7 @@
       <p>Stuur iets (max. 130 tekens) zodat het hardop wordt voorgelezen! Je kunt ook de ingebouwde <a  href="#soundboard" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">soundboard</a> gebruiken. Je kunt maximaal één bericht of één geluidseffect per vijf seconden sturen.</p><br>
 	  
 	   <h4>Text-to-Speech</h4>
-	  <form method="post" action="process.php">
+	  <form method="post" action="include/process.php">
 	  
 		  <div class="form-row" id="firstrow">
 			  <div class="form-group col-md-10 mb-3" id="message-group">

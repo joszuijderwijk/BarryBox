@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "../../process.php",
+      url: "../../include/process.php",
       data: formData,
       dataType: "json",
       encode: true,
@@ -75,7 +75,7 @@ $(document).ready(function () {
 		var val = $(this).val();
 		$.ajax({
 			type: 'POST',
-			url: '../../sound.php',
+			url: '../../include/sound.php',
 			data: {
 				sound: val,
 				client: client
