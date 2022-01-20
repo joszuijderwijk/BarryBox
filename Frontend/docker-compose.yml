@@ -1,0 +1,21 @@
+---
+version: "3.7"
+services:
+  web:
+    image: nginx:latest
+    restart: always
+    container_name: barrybox
+    ports:
+      - 8013:80
+    volumes:
+      - /storage/web/barrybox:/code
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php
+
+  php:
+    container_name: barrybox-php
+    image: php:7-fpm
+    restart: always
+    volumes:
+      - /storage/web/barrybox:/code
