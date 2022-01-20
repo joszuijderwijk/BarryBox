@@ -23,13 +23,16 @@
 #define I2S_LRC       26
 #define PIN_BUTTON    23
 
+// Maximum length of client name/username
+#define CLIENT_NAME_LEN 40
+
 Audio audio;
 
 WiFiClient wifiClient;               // WiFi
 PubSubClient client(wifiClient);     // MQTT
 bool isConnected = false;
 
-char client_name[40];
+char client_name[CLIENT_NAME_LEN];
 
 // Button settings
 unsigned long buttonTimer;
@@ -118,7 +121,7 @@ void setWifiManager() {
         serializeJson(json, Serial);
         if ( ! deserializeError ) {
          Serial.println("\nparsed json");
-         strcpy(client_name, json["client_name"]);
+         strlcpy(client_name, json["client_name"], CLIENT_NAME_LEN);
         } else {
           Serial.println("failed to load json config");
         }
@@ -129,7 +132,7 @@ void setWifiManager() {
     Serial.println("failed to mount FS");
   }
  
-  WiFiManagerParameter username("client_name", "Username", client_name, 40);
+  WiFiManagerParameter username("client_name", "Username", client_name, CLIENT_NAME_LEN);
   WiFiManagerParameter footer("<p>&copy; 2022 by <a href=\"https://joszuijderwijk.nl\">Jos Zuijderwijk</a></p>");
 
   WiFiManager wifiManager;
@@ -148,7 +151,7 @@ void setWifiManager() {
   }
 
   //read updated parameters
-  strcpy(client_name, username.getValue());
+  strlcpy(client_name, username.getValue(), CLIENT_NAME_LEN);
 
   Serial.println("The values in the file are: ");
   Serial.println("\tUsername : " + String(client_name));
