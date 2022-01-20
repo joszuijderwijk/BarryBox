@@ -1,5 +1,6 @@
+# Apache2
 RewriteEngine On
 RewriteBase /
 RewriteRule ^[^.]*$ index.php?user=$1 [L,QSA]
 
-# nginx: rewrite ^/[^.]*$ /index.php?user=$1 break; 
+# For nginx rewrite rule see `site.conf`
