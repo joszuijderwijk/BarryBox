@@ -214,27 +214,25 @@
 				  aria-labelledby="headingOne"
 				  data-mdb-parent="#soundboard"
 				>
-				
 				  <div class="soundcontainer">
-					<?php
-						$sPath = 'soundboard/*.mp3';
-						foreach (glob($sPath) AS $mp3) {
-							$name = basename($mp3, ".mp3");
-							echo '<div class="sound">';
-							echo '<h6>' . $name .'</h6>';
-							echo '<audio controls>';
-								echo '<source src="'.$mp3.'" type="audio/mpeg">';
-							echo '</audio>';
-							echo '<br>';
-							echo '<button class="btn sound-btn" value='. $name . '><i class="fa fa-play"></i> Verstuur</button>';
-							echo '</div>';
-							echo '<br>';
-						}
-					?>
-					</div>
+				  <?php
+				    $sPath = 'soundboard/*.mp3';
+				    foreach (glob($sPath) AS $mp3):
+					  $name = basename($mp3, ".mp3"); ?>
+					  <div class="sound">
+						  <h6><?=$name?></h6>
+						  <audio controls>
+							  <source src="'.$mp3.'" type="audio/mpeg">
+						  </audio>
+						  <br>
+						  <button class="btn sound-btn" value='<?=$name?>'><i class="fa fa-play"></i> Verstuur</button>
+					  </div>
+						<br>
+				  <?php endforeach ?>
 				</div>
 			  </div>
 			</div>
+		  </div>
 		  </div>
 		</div>
 	
