@@ -27,7 +27,6 @@
 					$('#aliasBadge').text("Onbekend");
 				}else{
 					$('#aliasBadge').text('@' + data.alias);
-					$('#alert').css('display','none');
 				}
 
 				if(data.status == 1){
@@ -50,6 +49,7 @@
 		});
 		
 	});
+
 		
 function disableComponents(value){
 	$('#submit').prop('disabled', value);
