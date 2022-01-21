@@ -223,7 +223,7 @@
 					  <div class="sound">
 						  <h6><?=$name?></h6>
 						  <audio controls>
-							  <source src="'.$mp3.'" type="audio/mpeg">
+							  <source src= <? $mp3 ?> type="audio/mpeg">
 						  </audio>
 						  <br>
 						  <button class="btn sound-btn" value='<?=$name?>'><i class="fa fa-play"></i> Verstuur</button>
