@@ -91,3 +91,8 @@ audio{
   margin-top: -25px; /* half of the elements height */
   margin-right: -25px; /* half of the elements widht */
 }
+
+.fa-github{
+	color:#333;
+	vertical-align: middle;
+}

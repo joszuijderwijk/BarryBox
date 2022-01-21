@@ -241,6 +241,8 @@
     <footer class="footer">
       <div class="container">
         <span class="text-muted">Een project van <a href="https://joszuijderwijk.nl">Jos Zuijderwijk</a></span>
+		<span class="pull-right" ><a href="https://github.com/iovidius/BarryBox"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></span>
+
       </div>
     </footer>
   </body>
