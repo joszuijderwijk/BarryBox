@@ -2,20 +2,21 @@ $(document).ready(function () {
 	
   $(".loader").fadeOut("slow");
 	
-	// $('#message').on('input', function() {
-		// var isText = ($('#message').val() == '');
-		// $('#example-tts').prop('disabled', isText); 
-	// });
+	$('#message').on('input', function() {
+		var istext = ($('#message').val() == '');
+		$('#example-tts').prop('disabled', istext); 
+	});
 	
-	// $('#example-tts').click( function() {
-		// var url = 'https://translate.google.com/translate_tts?q=';
-		// url +=  encodeURIComponent($('#message').val());
-		// url += '&tl=' + $('#language').val();
-		// url += '&client=tw-ob';
+	$('#example-tts').click( function() {
+		var url = 'https://translate.google.com/translate_tts?q=';
+		url +=  encodeuricomponent($('#message').val());
+		url += '&tl=' + $('#language').val();
+		url += '&client=tw-ob';
 
-		// // unfortunately Google blocks playing this directly
-		// window.open(url, '_blank').focus();
-	// });
+		// unfortunately google blocks playing this directly
+		var a = new Audio(url);
+		a.play();
+	});
 	
   $("form").submit(function (event) {
 	  
