@@ -64,7 +64,7 @@
 		<h4>Text-to-Speech</h4>
 		<form method="post" action="include/process.php">
 
-			<div class="form-row" id="firstrow">
+			<div class="form-row row" id="firstrow">
 				<div class="form-group col-md-10 mb-3" id="message-group">
 					<input class="form-control form-control-lg" id="message" name="message" type="text" maxlength="130" placeholder="Iets liefs...">
 				</div>
