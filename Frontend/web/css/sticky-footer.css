@@ -116,6 +116,6 @@ audio {
     background-color: #6c757d;
 }
 
-#message-group{
-	padding-right: 0px;
+.fa-exclamation-circle{
+	margin-right: 10px;
 }

@@ -42,7 +42,6 @@ startInterval(30, function () {
 	}).fail(function () {
 		displayError("Er was een fout bij het verbinden naar de server.");
 		disableComponents(true);
-		console.log('failed');
 	});
 
 });
