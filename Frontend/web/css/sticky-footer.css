@@ -110,3 +110,8 @@ audio {
 	color:#333;
 	vertical-align: middle;
 }
+
+.badge-secondary {
+    color: #fff;
+    background-color: #6c757d;
+}
