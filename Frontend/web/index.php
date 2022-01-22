@@ -50,7 +50,7 @@
 		<div style="margin-top: 3rem!important;margin-bottom:0.5rem;">
 
 			<div class="alert alert-danger d-flex align-items-center" role="alert" id="alert" style="display:none !important;">
-				<i class="fa fa-exclamation-circle fa-2x" style="margin-right:15px;" aria-hidden="true"></i>
+				<i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
 				<span id="alert-text">
 					De gevraagde gebruiker bestaat niet.
 				</span>
