@@ -5,7 +5,7 @@ BarryBox is an MQTT controlled Text-to-Speech Speaker. It is connected to a fron
 
 ## Hardware
 
-The BarryBox is based on an ESP-32 microcontroller, which controls a PCM5102 DAC.
+The BarryBox is based on an ESP32 microcontroller, which controls a PCM5102 DAC.
 
 <table>
   <tr>
