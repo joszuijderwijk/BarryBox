@@ -64,7 +64,6 @@ audio {
 
 #soundboard {
     margin-top: 15px;
-    padding-bottom: 15px;
 }
 
 .no-js .loader {
@@ -118,4 +117,8 @@ audio {
 
 .fa-exclamation-circle{
 	margin-right: 10px;
+}
+
+.small-container{
+	padding-bottom: 30px;
 }
