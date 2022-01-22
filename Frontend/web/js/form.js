@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 	$("form").submit(function (event) {
 
-		// disable button for 5s
+		// disable button for 3s
 		$('#submit').prop('disabled', true);
 		$('.sound-btn').prop('disabled', true);
 
@@ -60,7 +60,7 @@ $(document).ready(function () {
 				setTimeout(function () {
 					$('#submit').prop('disabled', false);
 					$('.sound-btn').prop('disabled', false);
-				}, 5000);
+				}, 3000);
 			}
 		});
 
@@ -86,7 +86,7 @@ $(document).ready(function () {
 				setTimeout(function () {
 					$('#submit').prop('disabled', false);
 					$('.sound-btn').prop('disabled', false);
-				}, 5000);
+				}, 3000);
 
 				//console.log(data);
 
