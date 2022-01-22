@@ -66,7 +66,7 @@ char *W_TEXT = "gamecube";
 
 const char *DEFAULT_LANGUAGE = "nl";
 
-char *languages[] = {"af", "sq", "ar", "hy", "az", "eu", "be", "bg", "ca", "zh-cn", "zh-tw", "hr", "cs", "da", "nl",
+char *languages[] = {"af", "sq", "ar", "hy", "az", "eu", "bg", "ca", "zh-cn", "zh-tw", "hr", "cs", "da", "nl",
 					 "en", "et", "tl", "fi", "fr", "gl", "ka", "de", "el", "ht", "iw", "hi", "hu", "is", "id", "ga",
 					 "it", "ja", "ko", "lv", "lt", "mk", "ms", "mt", "no", "fa", "pl", "pt", "ro", "ru", "sr", "sk",
 					 "sl", "es", "sw", "sv", "th", "tr", "uk", "ur", "vi", "cy", "yi"};

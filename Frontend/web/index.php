@@ -73,7 +73,6 @@
 					<select id="language" name="language" class="form-control" style="height:48px;">
 						<optgroup label="Populair">
 							<option>nl</option>
-							<option>be</option>
 							<option>en</option>
 							<option>de</option>
 							<option>fr</option>							
@@ -86,11 +85,8 @@
 							<option>hy</option>
 							<option>az</option>
 							<option>eu</option>
-							<option>be</option>
 							<option>bg</option>
 							<option>ca</option>
-							<option>zh-cn</option>
-							<option>zh-tw</option>
 							<option>hr</option>
 							<option>cs</option>
 							<option>da</option>
