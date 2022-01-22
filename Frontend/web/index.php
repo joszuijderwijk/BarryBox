@@ -73,119 +73,71 @@
 					<select id="language" name="language" class="form-control" style="height:48px;">
 						<optgroup label="Populair">
 							<option>nl</option>
+							<option>be</option>
 							<option>en</option>
 							<option>de</option>
-							<option>fr</option>
+							<option>fr</option>							
+							<option>it</option>
 						</optgroup>
 						<optgroup label="Alles">
 							<option>af</option>
 							<option>sq</option>
-							<option>am</option>
 							<option>ar</option>
 							<option>hy</option>
 							<option>az</option>
 							<option>eu</option>
 							<option>be</option>
-							<option>bn</option>
-							<option>bs</option>
 							<option>bg</option>
 							<option>ca</option>
-							<option>ceb</option>
 							<option>zh-cn</option>
 							<option>zh-tw</option>
-							<option>co</option>
 							<option>hr</option>
 							<option>cs</option>
 							<option>da</option>
 							<option>nl</option>
 							<option>en</option>
-							<option>eo</option>
 							<option>et</option>
+							<option>tl</option>
 							<option>fi</option>
 							<option>fr</option>
-							<option>fy</option>
 							<option>gl</option>
 							<option>ka</option>
 							<option>de</option>
 							<option>el</option>
-							<option>gu</option>
 							<option>ht</option>
-							<option>ha</option>
-							<option>haw</option>
-							<option>he</option>
+							<option>iw</option>
 							<option>hi</option>
-							<option>hmn</option>
 							<option>hu</option>
 							<option>is</option>
-							<option>ig</option>
 							<option>id</option>
 							<option>ga</option>
 							<option>it</option>
 							<option>ja</option>
-							<option>jv</option>
-							<option>kn</option>
-							<option>kk</option>
-							<option>km</option>
-							<option>rw</option>
 							<option>ko</option>
-							<option>ku</option>
-							<option>ky</option>
-							<option>lo</option>
 							<option>lv</option>
 							<option>lt</option>
-							<option>lb</option>
 							<option>mk</option>
-							<option>mg</option>
 							<option>ms</option>
-							<option>ml</option>
 							<option>mt</option>
-							<option>mi</option>
-							<option>mr</option>
-							<option>mn</option>
-							<option>my</option>
-							<option>ne</option>
 							<option>no</option>
-							<option>ny</option>
-							<option>or</option>
-							<option>ps</option>
 							<option>fa</option>
 							<option>pl</option>
 							<option>pt</option>
-							<option>pa</option>
 							<option>ro</option>
 							<option>ru</option>
-							<option>sm</option>
-							<option>gd</option>
 							<option>sr</option>
-							<option>st</option>
-							<option>sn</option>
-							<option>sd</option>
-							<option>si</option>
 							<option>sk</option>
 							<option>sl</option>
-							<option>so</option>
 							<option>es</option>
-							<option>su</option>
 							<option>sw</option>
 							<option>sv</option>
-							<option>tl</option>
-							<option>tg</option>
-							<option>ta</option>
-							<option>tt</option>
-							<option>te</option>
 							<option>th</option>
 							<option>tr</option>
-							<option>tk</option>
 							<option>uk</option>
 							<option>ur</option>
-							<option>ug</option>
-							<option>uz</option>
 							<option>vi</option>
 							<option>cy</option>
-							<option>xh</option>
 							<option>yi</option>
-							<option>yo</option>
-							<option>zu</option>
 						</optgroup>
 					</select>
 				</div>

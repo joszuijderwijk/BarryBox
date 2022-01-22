@@ -66,14 +66,10 @@ char *W_TEXT = "gamecube";
 
 const char *DEFAULT_LANGUAGE = "nl";
 
-char *languages[] = {"af", "sq", "am", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "zh-cn"
-                                                                                                    "zh",
-                     "zh-tw", "co", "hr",
-                     "cs", "da", "nl", "en", "eo", "et", "fi", "fr", "fy", "gl", "ka", "de", "el", "gu", "ht", "ha", "haw", "he or iw",
-                     "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jv", "kn", "kk", "km", "rw", "ko", "ku", "ky", "lo", "la",
-                     "lv", "lt", "lb", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "ny", "or", "ps", "fa", "pl",
-                     "pt", "pa", "ro", "ru", "sm", "gd", "sr", "st", "sn", "sd", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tl",
-                     "tg", "ta", "tt", "te", "th", "tr", "tk", "uk", "ur", "ug", "uz", "vi", "cy", "xh", "yi", "yo", "zu"};
+char *languages[] = {"af", "sq", "ar", "hy", "az", "eu", "be", "bg", "ca", "zh-cn", "zh-tw", "hr", "cs", "da", "nl",
+					 "en", "et", "tl", "fi", "fr", "gl", "ka", "de", "el", "ht", "iw", "hi", "hu", "is", "id", "ga",
+					 "it", "ja", "ko", "lv", "lt", "mk", "ms", "mt", "no", "fa", "pl", "pt", "ro", "ru", "sr", "sk",
+					 "sl", "es", "sw", "sv", "th", "tr", "uk", "ur", "vi", "cy", "yi"};
 
 // Queue capable of holding max 20 items
 ArduinoQueue<Streamable *> Q(20);
