@@ -115,3 +115,7 @@ audio {
     color: #fff;
     background-color: #6c757d;
 }
+
+#message-group{
+	padding-right: 0px;
+}
