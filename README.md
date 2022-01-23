@@ -26,8 +26,8 @@ The BarryBox is based on an ESP32 microcontroller, which controls a PCM5102 DAC.
 
 <table>
   <tr>
-    <td valign="top"><img src="https://i.imgur.com/YZvjGPT.jpg"/></td>
-    <td valign="top"><img src="https://i.imgur.com/uDoUA4R.jpg"/></td>
+    <td valign="top"><img src="https://i.imgur.com/L86SzJb.png"/></td>
+    <td valign="top"><img src="https://i.imgur.com/l439Zwu.png"/></td>
   </tr>
 </table>
 
