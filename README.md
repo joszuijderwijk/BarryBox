@@ -13,9 +13,9 @@ The BarryBox has the following features:
   * Clear the queue of streams if you press the button long.
 
 The backend adds the following features:
-  * Create HTTP endpoints for sending messages and obtaining the status;
+  * Make HTTP endpoints available for sending messages and obtaining the status;
   * Save incoming messages into a database;
-  * Restricting access to people with an API key;
+  * Restricting access with an API key;
   * Automatically register newly connected BarryBoxes by username.
 
 With the frontend you can easily access any BarryBox over the web.
