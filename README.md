@@ -36,7 +36,7 @@ The BarryBox is based on an ESP32 microcontroller, which controls a PCM5102 DAC.
 1. Install the [ESP32 Arduino core](https://github.com/espressif/arduino-esp32) from the Arduino Boards Manager.
 2. Install the required libraries from the Library Manager:
     - [ESP32-audioI2S](https://github.com/schreibfaul1/ESP32-audioI2S)
-    - [WiFiManager-ESP32] (https://github.com/tzapu/WiFiManager)[^1]
+    - [WiFiManager-ESP32] (https://github.com/tzapu/WiFiManager)
     - [esp8266-google-tts](https://github.com/horihiro/esp8266-google-tts)
     - [Arduino Client for MQTT](https://github.com/knolleary/pubsubclient)
     - [ArduinoJson](https://github.com/bblanchon/ArduinoJson)
