@@ -58,7 +58,7 @@
 
 			<h1 class="mt-5" style="display: inline"> BarryBox </span></h1> <span id="aliasBadge" class="badge badge-secondary">@Berenhuis</span> <span id="statusBadge" class="badge bg-success">Online</span>
 		</div>
-		<p class="lead">De <a href="#">BarryBox</a> is een apparaat dat alles opleest wat je 'm stuurt.</p>
+		<p class="lead">De <a href="https://joszuijderwijk.nl/barrybox">BarryBox</a> is een apparaat dat alles opleest wat je 'm stuurt.</p>
 		<p>Stuur iets (max. 130 tekens) zodat het hardop wordt voorgelezen! Je kunt ook de ingebouwde <a href="#soundboard" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">soundboard</a> gebruiken. Je kunt maximaal één bericht of één geluidseffect per drie seconden sturen.</p><br>
 
 		<div class="small-container">
