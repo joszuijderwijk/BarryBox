@@ -20,6 +20,10 @@ The backend adds the following features:
 
 With the frontend you can easily access any BarryBox over the web.
 
+# Demo
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/L5berj419ZM/0.jpg)](http://www.youtube.com/watch?v=L5berj419ZM "BarryBox: TTS WiFi Speaker")
+
+
 ## Hardware
 
 The BarryBox is based on an ESP32 microcontroller, which controls a PCM5102 DAC.
