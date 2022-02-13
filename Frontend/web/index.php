@@ -59,121 +59,125 @@
 			<h1 class="mt-5" style="display: inline"> BarryBox </span></h1> <span id="aliasBadge" class="badge badge-secondary">@Berenhuis</span> <span id="statusBadge" class="badge bg-success">Online</span>
 		</div>
 		<p class="lead">De <a href="#">BarryBox</a> is een apparaat dat alles opleest wat je 'm stuurt.</p>
-		<p>Stuur iets (max. 130 tekens) zodat het hardop wordt voorgelezen! Je kunt ook de ingebouwde <a href="#soundboard" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">soundboard</a> gebruiken. Je kunt maximaal één bericht of één geluidseffect per vijf seconden sturen.</p><br>
+		<p>Stuur iets (max. 130 tekens) zodat het hardop wordt voorgelezen! Je kunt ook de ingebouwde <a href="#soundboard" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">soundboard</a> gebruiken. Je kunt maximaal één bericht of één geluidseffect per drie seconden sturen.</p><br>
 
-		<h4>Text-to-Speech</h4>
-		<form method="post" action="include/process.php">
+		<div class="small-container">
+			<h4>Text-to-Speech</h4>
+			<form method="post" action="include/process.php">
 
-			<div class="form-row row g-2" id="firstrow">
-				<div class="form-group col-md-10 mb-3" id="message-group">
-					<input class="form-control form-control-lg" id="message" name="message" type="text" maxlength="130" placeholder="Iets liefs...">
+				<div class="form-row row g-2" id="firstrow">
+					<div class="form-group col-md-10 mb-3" id="message-group">
+						<input class="form-control form-control-lg" id="message" name="message" type="text" maxlength="130" placeholder="Iets liefs...">
+					</div>
+
+					<div class="form-group col-md-2 mb-3" id="lang-group">
+						<select id="language" name="language" class="form-control" style="height:48px;">
+							<optgroup label="Populair">
+								<option>nl</option>
+								<option>en</option>
+								<option>de</option>
+								<option>fr</option>							
+								<option>it</option>
+							</optgroup>
+							<optgroup label="Alles">
+								<option>af</option>
+								<option>sq</option>
+								<option>ar</option>
+								<option>hy</option>
+								<option>az</option>
+								<option>eu</option>
+								<option>bg</option>
+								<option>ca</option>
+								<option>hr</option>
+								<option>cs</option>
+								<option>da</option>
+								<option>nl</option>
+								<option>en</option>
+								<option>et</option>
+								<option>tl</option>
+								<option>fi</option>
+								<option>fr</option>
+								<option>gl</option>
+								<option>ka</option>
+								<option>de</option>
+								<option>el</option>
+								<option>ht</option>
+								<option>iw</option>
+								<option>hi</option>
+								<option>hu</option>
+								<option>is</option>
+								<option>id</option>
+								<option>ga</option>
+								<option>it</option>
+								<option>ja</option>
+								<option>ko</option>
+								<option>lv</option>
+								<option>lt</option>
+								<option>mk</option>
+								<option>ms</option>
+								<option>mt</option>
+								<option>no</option>
+								<option>fa</option>
+								<option>pl</option>
+								<option>pt</option>
+								<option>ro</option>
+								<option>ru</option>
+								<option>sr</option>
+								<option>sk</option>
+								<option>sl</option>
+								<option>es</option>
+								<option>sw</option>
+								<option>sv</option>
+								<option>th</option>
+								<option>tr</option>
+								<option>uk</option>
+								<option>ur</option>
+								<option>vi</option>
+								<option>cy</option>
+								<option>yi</option>
+							</optgroup>
+						</select>
+					</div>
 				</div>
 
-				<div class="form-group col-md-2 mb-3" id="lang-group">
-					<select id="language" name="language" class="form-control" style="height:48px;">
-						<optgroup label="Populair">
-							<option>nl</option>
-							<option>en</option>
-							<option>de</option>
-							<option>fr</option>							
-							<option>it</option>
-						</optgroup>
-						<optgroup label="Alles">
-							<option>af</option>
-							<option>sq</option>
-							<option>ar</option>
-							<option>hy</option>
-							<option>az</option>
-							<option>eu</option>
-							<option>bg</option>
-							<option>ca</option>
-							<option>hr</option>
-							<option>cs</option>
-							<option>da</option>
-							<option>nl</option>
-							<option>en</option>
-							<option>et</option>
-							<option>tl</option>
-							<option>fi</option>
-							<option>fr</option>
-							<option>gl</option>
-							<option>ka</option>
-							<option>de</option>
-							<option>el</option>
-							<option>ht</option>
-							<option>iw</option>
-							<option>hi</option>
-							<option>hu</option>
-							<option>is</option>
-							<option>id</option>
-							<option>ga</option>
-							<option>it</option>
-							<option>ja</option>
-							<option>ko</option>
-							<option>lv</option>
-							<option>lt</option>
-							<option>mk</option>
-							<option>ms</option>
-							<option>mt</option>
-							<option>no</option>
-							<option>fa</option>
-							<option>pl</option>
-							<option>pt</option>
-							<option>ro</option>
-							<option>ru</option>
-							<option>sr</option>
-							<option>sk</option>
-							<option>sl</option>
-							<option>es</option>
-							<option>sw</option>
-							<option>sv</option>
-							<option>th</option>
-							<option>tr</option>
-							<option>uk</option>
-							<option>ur</option>
-							<option>vi</option>
-							<option>cy</option>
-							<option>yi</option>
-						</optgroup>
-					</select>
+				<div class="form-group row">
+					<div class="col-auto" style="width: 100%; text-align:right;">
+						<button type="submit" id="submit" name="submit" class="btn btn-primary" style="width:150px;">Verstuur</button>
+					</div>
 				</div>
-			</div>
+			</form>
+		</div>
 
-			<div class="form-group row">
-				<div class="col-auto" style="width: 100%; text-align:right;">
-					<button type="submit" id="submit" name="submit" class="btn btn-primary" style="width:150px;">Verstuur</button>
-				</div>
-			</div>
-		</form>
+		<div class="small-container">
+			<h4>Geluidseffecten</h4>
+			Hieronder staan alle ingebouwde geluidseffecten.
 
-		<h4>Geluidseffecten</h4>
-		Hieronder staan alle ingebouwde geluidseffecten.
-
-		<div class="accordion accordion" id="soundboard">
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingOne">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-						Soundboard
-					</button>
-				</h2>
-				<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#soundboard">
-					<div class="accordion-body">
-						<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-mdb-parent="#soundboard">
-							<div class="soundcontainer">
-								<?php
-								$sPath = 'soundboard/*.mp3';
-								foreach (glob($sPath) as $mp3) :
-									$name = basename($mp3, ".mp3"); ?>
-									<div class="sound">
-										<h6><?= $name ?></h6>
-										<audio controls>
-											<source src="<?= $mp3 ?>" type="audio/mpeg">
-										</audio>
+			<div class="accordion accordion" id="soundboard">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							Soundboard
+						</button>
+					</h2>
+					<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#soundboard">
+						<div class="accordion-body">
+							<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-mdb-parent="#soundboard">
+								<div class="soundcontainer">
+									<?php
+									$sPath = 'soundboard/*.mp3';
+									foreach (glob($sPath) as $mp3) :
+										$name = basename($mp3, ".mp3"); ?>
+										<div class="sound">
+											<h6><?= $name ?></h6>
+											<audio controls>
+												<source src="<?= $mp3 ?>" type="audio/mpeg">
+											</audio>
+											<br>
+											<button class="btn sound-btn" value='<?= $name ?>'><i class="fa fa-play"></i> Verstuur</button>
+										</div>
 										<br>
-										<button class="btn sound-btn" value='<?= $name ?>'><i class="fa fa-play"></i> Verstuur</button>
-									</div>
-									<br>
-								<?php endforeach ?>
+									<?php endforeach ?>
+								</div>
 							</div>
 						</div>
 					</div>
