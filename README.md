@@ -1,5 +1,5 @@
 # BarryBox
-BarryBox is an MQTT controlled Text-to-Speech speaker. It is connected to a frontend from which you can directly send messages and sounds (from a soundboard) to the speaker. My personal BarryBox is hosted at: https://barrybox.hetberenhuis.nl.
+BarryBox is an MQTT controlled Text-to-Speech speaker. It is connected to a frontend from which you can directly send messages and sounds (from a soundboard) to the speaker. My personal BarryBox is hosted at: https://barrybox.nl/
 
 <img src="https://i.imgur.com/nki11Zw.jpg" alt="BarryBox" width="600"/>
 
