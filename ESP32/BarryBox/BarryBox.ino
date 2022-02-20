@@ -18,8 +18,8 @@
 #include "streamable.cpp"
 
 // Pins
-#define I2S_DOUT   25
-#define I2S_BCLK   27
+#define I2S_DOUT   27
+#define I2S_BCLK   25
 #define I2S_LRC    26
 #define PIN_BUTTON 23
 
@@ -102,7 +102,7 @@ void setWifiManager()
 
   Serial.println("mounting FS...");
 
-  if (SPIFFS.begin())
+  if (SPIFFS.begin(true))
   {
     Serial.println("mounted file system");
     if (SPIFFS.exists("/config.json"))
