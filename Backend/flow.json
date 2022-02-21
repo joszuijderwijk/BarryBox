@@ -1,556 +1,556 @@
 [
-  {
-    "id": "f324e258ea2e300e",
-    "type": "subflow",
-    "name": "Check API",
-    "info": "",
-    "category": "",
-    "in": [
-      {
-        "x": 80,
+    {
+        "id": "f324e258ea2e300e",
+        "type": "subflow",
+        "name": "Check API",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "923c98efc99ffa17"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 720,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "af68d3051d0413b9",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "bca45c0b0b96f9b0",
+        "type": "template",
+        "z": "f324e258ea2e300e",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "SELECT * FROM `API-keys` WHERE value=\"{{req.headers.api-key}}\";",
+        "output": "str",
+        "x": 340,
         "y": 80,
         "wires": [
-          {
-            "id": "923c98efc99ffa17"
-          }
+            [
+                "26be62ae42b0766a"
+            ]
         ]
-      }
-    ],
-    "out": [
-      {
-        "x": 720,
-        "y": 160,
+    },
+    {
+        "id": "26be62ae42b0766a",
+        "type": "mysql",
+        "z": "f324e258ea2e300e",
+        "mydb": "cccc3214.41bd",
+        "name": "",
+        "x": 470,
+        "y": 80,
         "wires": [
-          {
-            "id": "af68d3051d0413b9",
-            "port": 1
-          }
+            [
+                "af68d3051d0413b9"
+            ]
         ]
-      }
-    ],
-    "env": [],
-    "meta": {},
-    "color": "#DDAA99"
-  },
-  {
-    "id": "bca45c0b0b96f9b0",
-    "type": "template",
-    "z": "f324e258ea2e300e",
-    "name": "",
-    "field": "topic",
-    "fieldType": "msg",
-    "format": "sql",
-    "syntax": "mustache",
-    "template": "SELECT * FROM `API-keys` WHERE value=\"{{req.headers.api-key}}\";",
-    "output": "str",
-    "x": 340,
-    "y": 80,
-    "wires": [
-      [
-        "26be62ae42b0766a"
-      ]
-    ]
-  },
-  {
-    "id": "26be62ae42b0766a",
-    "type": "mysql",
-    "z": "f324e258ea2e300e",
-    "mydb": "cccc3214.41bd",
-    "name": "",
-    "x": 470,
-    "y": 80,
-    "wires": [
-      [
-        "af68d3051d0413b9"
-      ]
-    ]
-  },
-  {
-    "id": "db6170c8d607db0c",
-    "type": "http response",
-    "z": "f324e258ea2e300e",
-    "name": "",
-    "statusCode": "401",
-    "headers": {},
-    "x": 760,
-    "y": 80,
-    "wires": []
-  },
-  {
-    "id": "af68d3051d0413b9",
-    "type": "function",
-    "z": "f324e258ea2e300e",
-    "name": "",
-    "func": "if (msg.payload.length == 0){\n    // NO API-key found\n    msg.payload = 'API key is invalid.';\n    return [msg, null];\n} else {\n    msg.payload = msg.original_msg;\n    return [null, msg];\n}",
-    "outputs": 2,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 600,
-    "y": 80,
-    "wires": [
-      [
-        "db6170c8d607db0c"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "923c98efc99ffa17",
-    "type": "function",
-    "z": "f324e258ea2e300e",
-    "name": "",
-    "func": "msg.original_msg = msg.payload;\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 200,
-    "y": 80,
-    "wires": [
-      [
-        "bca45c0b0b96f9b0"
-      ]
-    ]
-  },
-  {
-    "id": "405e91369f423292",
-    "type": "tab",
-    "label": "BarryBox",
-    "disabled": false,
-    "info": "",
-    "env": []
-  },
-  {
-    "id": "092ef13e9f9c8fe9",
-    "type": "http in",
-    "z": "405e91369f423292",
-    "name": "",
-    "url": "/barrybox",
-    "method": "post",
-    "upload": false,
-    "swaggerDoc": "",
-    "x": 380,
-    "y": 260,
-    "wires": [
-      [
-        "45129a3d61c5308b"
-      ]
-    ]
-  },
-  {
-    "id": "ff4a1df23c6c3003",
-    "type": "mqtt out",
-    "z": "405e91369f423292",
-    "name": "",
-    "topic": "",
-    "qos": "",
-    "retain": "",
-    "respTopic": "",
-    "contentType": "",
-    "userProps": "",
-    "correl": "",
-    "expiry": "",
-    "broker": "91478dbd.3a542",
-    "x": 1190,
-    "y": 260,
-    "wires": []
-  },
-  {
-    "id": "c93798bf6f7d6131",
-    "type": "json",
-    "z": "405e91369f423292",
-    "name": "",
-    "property": "payload",
-    "action": "obj",
-    "pretty": false,
-    "x": 730,
-    "y": 260,
-    "wires": [
-      [
-        "75d67e727f3fa96b"
-      ]
-    ]
-  },
-  {
-    "id": "89d37c6dcd531a63",
-    "type": "http response",
-    "z": "405e91369f423292",
-    "name": "",
-    "statusCode": "400",
-    "headers": {},
-    "x": 1200,
-    "y": 320,
-    "wires": []
-  },
-  {
-    "id": "e4c90a82064d622e",
-    "type": "template",
-    "z": "405e91369f423292",
-    "name": "",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "handlebars",
-    "syntax": "mustache",
-    "template": "{{error}}",
-    "output": "str",
-    "x": 1060,
-    "y": 320,
-    "wires": [
-      [
-        "89d37c6dcd531a63"
-      ]
-    ]
-  },
-  {
-    "id": "c3687ffbcab19987",
-    "type": "http response",
-    "z": "405e91369f423292",
-    "name": "",
-    "statusCode": "200",
-    "headers": {},
-    "x": 1200,
-    "y": 200,
-    "wires": []
-  },
-  {
-    "id": "2b9953a245c2a059",
-    "type": "template",
-    "z": "405e91369f423292",
-    "name": "",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "handlebars",
-    "syntax": "mustache",
-    "template": "Succesfully processed request.",
-    "output": "str",
-    "x": 1060,
-    "y": 200,
-    "wires": [
-      [
-        "c3687ffbcab19987"
-      ]
-    ]
-  },
-  {
-    "id": "fe1130c4133224ec",
-    "type": "json",
-    "z": "405e91369f423292",
-    "name": "",
-    "property": "payload",
-    "action": "str",
-    "pretty": false,
-    "x": 1050,
-    "y": 260,
-    "wires": [
-      [
-        "ff4a1df23c6c3003"
-      ]
-    ]
-  },
-  {
-    "id": "35d6e08bda1cde7d",
-    "type": "mysql",
-    "z": "405e91369f423292",
-    "mydb": "cccc3214.41bd",
-    "name": "",
-    "x": 810,
-    "y": 620,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "05b33b98535451dc",
-    "type": "template",
-    "z": "405e91369f423292",
-    "name": "",
-    "field": "topic",
-    "fieldType": "msg",
-    "format": "sql",
-    "syntax": "mustache",
-    "template": "INSERT INTO BarryBoxClients (client, status, alias)\nVALUES (\"{{client}}\", \"{{status}}\", \"\")\nON DUPLICATE KEY UPDATE status=\"{{status}}\"",
-    "output": "str",
-    "x": 660,
-    "y": 620,
-    "wires": [
-      [
-        "35d6e08bda1cde7d"
-      ]
-    ]
-  },
-  {
-    "id": "f5408511323f62f2",
-    "type": "mqtt in",
-    "z": "405e91369f423292",
-    "name": "",
-    "topic": "barrybox/+/connection",
-    "qos": "2",
-    "datatype": "auto",
-    "broker": "91478dbd.3a542",
-    "nl": false,
-    "rap": true,
-    "rh": 0,
-    "inputs": 0,
-    "x": 340,
-    "y": 620,
-    "wires": [
-      [
-        "5722b987a433cac5"
-      ]
-    ]
-  },
-  {
-    "id": "0e82b8ce95243f8c",
-    "type": "http in",
-    "z": "405e91369f423292",
-    "name": "",
-    "url": "/barrybox",
-    "method": "get",
-    "upload": false,
-    "swaggerDoc": "",
-    "x": 250,
-    "y": 480,
-    "wires": [
-      [
-        "5e44648189377c5a"
-      ]
-    ]
-  },
-  {
-    "id": "6d29b9374ca92ee4",
-    "type": "http response",
-    "z": "405e91369f423292",
-    "name": "",
-    "statusCode": "200",
-    "headers": {},
-    "x": 1200,
-    "y": 440,
-    "wires": []
-  },
-  {
-    "id": "5722b987a433cac5",
-    "type": "function",
-    "z": "405e91369f423292",
-    "name": "",
-    "func": "msg.client = msg.topic.replace('barrybox/','').replace('/connection','');\nmsg.status = msg.payload;\n\nmsg.alias = msg.client.charAt(0).toUpperCase() + msg.client.slice(1);\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 520,
-    "y": 620,
-    "wires": [
-      [
-        "05b33b98535451dc"
-      ]
-    ]
-  },
-  {
-    "id": "03e7a5182e3619a3",
-    "type": "template",
-    "z": "405e91369f423292",
-    "name": "",
-    "field": "topic",
-    "fieldType": "msg",
-    "format": "sql",
-    "syntax": "mustache",
-    "template": "SELECT status, alias FROM BarryBoxClients\nWHERE client=\"{{client}}\";",
-    "output": "str",
-    "x": 780,
-    "y": 440,
-    "wires": [
-      [
-        "73d353a3687da190"
-      ]
-    ]
-  },
-  {
-    "id": "aa2d8f32656a8d80",
-    "type": "http response",
-    "z": "405e91369f423292",
-    "name": "",
-    "statusCode": "400",
-    "headers": {},
-    "x": 780,
-    "y": 500,
-    "wires": []
-  },
-  {
-    "id": "73d353a3687da190",
-    "type": "mysql",
-    "z": "405e91369f423292",
-    "mydb": "cccc3214.41bd",
-    "name": "",
-    "x": 910,
-    "y": 440,
-    "wires": [
-      [
-        "a4857d586fc9cd17"
-      ]
-    ]
-  },
-  {
-    "id": "a4857d586fc9cd17",
-    "type": "function",
-    "z": "405e91369f423292",
-    "name": "",
-    "func": "if (msg.payload[0]){\n    msg.payload = msg.payload[0];\n} else {\n    msg.payload = {\"error\": \"Client not found.\"};\n}\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1040,
-    "y": 440,
-    "wires": [
-      [
-        "6d29b9374ca92ee4"
-      ]
-    ]
-  },
-  {
-    "id": "e63035d83e93d62d",
-    "type": "mysql",
-    "z": "405e91369f423292",
-    "mydb": "cccc3214.41bd",
-    "name": "",
-    "x": 870,
-    "y": 180,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "8090b2a1913ad865",
-    "type": "template",
-    "z": "405e91369f423292",
-    "name": "",
-    "field": "topic",
-    "fieldType": "msg",
-    "format": "sql",
-    "syntax": "mustache",
-    "template": "INSERT INTO BarryBoxLogs (client, type, data, lang)\nVALUES (\"{{payload.client}}\",\"{{payload.type}}\", \"{{payload.text}}\", \"{{payload.language}}\");",
-    "output": "str",
-    "x": 740,
-    "y": 180,
-    "wires": [
-      [
-        "e63035d83e93d62d"
-      ]
-    ]
-  },
-  {
-    "id": "5233f481a8fd789c",
-    "type": "function",
-    "z": "405e91369f423292",
-    "name": "",
-    "func": "\nif (!msg.payload.client || ! /^[a-z0-9]+$/i.test(msg.payload.client)) {\n    msg.payload = \"Invalid client name!\";\n    return [null, msg];\n} else {\n    msg.client = msg.payload.client;\n    return [msg, null];\n}",
-    "outputs": 2,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 600,
-    "y": 480,
-    "wires": [
-      [
-        "03e7a5182e3619a3"
-      ],
-      [
-        "aa2d8f32656a8d80"
-      ]
-    ]
-  },
-  {
-    "id": "75d67e727f3fa96b",
-    "type": "function",
-    "z": "405e91369f423292",
-    "name": "",
-    "func": "if (!(msg.payload.type == \"say\" || msg.payload.type == \"soundboard\") || msg.payload.client == \"\" || msg.payload.text == \"\"){\n    msg.error = \"Invalid request.\";\n    return [null, msg];\n}\n\nmsg.payload.client = msg.payload.client.toLowerCase();\n\nif (msg.payload.text.length > 5000){\n    msg.error = \"Character limit exceeded.\";\n    return [null, msg];\n}\n\nvar newMsg = {payload: {}};\nnewMsg.topic = \"barrybox/\" + msg.payload.client + \"/\" + msg.payload.type;\n\nif (msg.payload.type == \"say\"){\n    newMsg.payload.language = msg.payload.language;\n    newMsg.payload.text = msg.payload.text;\n} else if (msg.payload.type == \"soundboard\"){\n    newMsg.payload = msg.payload.text;\n}\n\nnewMsg.res = msg.res;\nreturn [newMsg, null];",
-    "outputs": 2,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 880,
-    "y": 260,
-    "wires": [
-      [
-        "2b9953a245c2a059",
-        "fe1130c4133224ec"
-      ],
-      [
-        "e4c90a82064d622e"
-      ]
-    ]
-  },
-  {
-    "id": "5e44648189377c5a",
-    "type": "subflow:f324e258ea2e300e",
-    "z": "405e91369f423292",
-    "name": "Check API-key",
-    "x": 440,
-    "y": 480,
-    "wires": [
-      [
-        "5233f481a8fd789c"
-      ]
-    ]
-  },
-  {
-    "id": "45129a3d61c5308b",
-    "type": "subflow:f324e258ea2e300e",
-    "z": "405e91369f423292",
-    "name": "Check API-key",
-    "x": 560,
-    "y": 260,
-    "wires": [
-      [
-        "8090b2a1913ad865",
-        "c93798bf6f7d6131"
-      ]
-    ]
-  },
-  {
-    "id": "91478dbd.3a542",
-    "type": "mqtt-broker",
-    "name": "",
-    "broker": "mqtt.joszuijderwijk.nl",
-    "port": "8883",
-    "tls": "",
-    "clientid": "server_berenhuis",
-    "autoConnect": true,
-    "usetls": true,
-    "compatmode": false,
-    "protocolVersion": "4",
-    "keepalive": "60",
-    "cleansession": true,
-    "birthTopic": "",
-    "birthQos": "0",
-    "birthPayload": "",
-    "birthMsg": {},
-    "closeTopic": "",
-    "closeQos": "0",
-    "closePayload": "",
-    "closeMsg": {},
-    "willTopic": "",
-    "willQos": "0",
-    "willPayload": "",
-    "willMsg": {},
-    "sessionExpiry": ""
-  },
-  {
-    "id": "cccc3214.41bd",
-    "type": "MySQLdatabase",
-    "name": "",
-    "host": "mariadb",
-    "port": "3306",
-    "db": "jos-db",
-    "tz": "",
-    "charset": "UTF8"
-  }
+    },
+    {
+        "id": "db6170c8d607db0c",
+        "type": "http response",
+        "z": "f324e258ea2e300e",
+        "name": "",
+        "statusCode": "401",
+        "headers": {},
+        "x": 760,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "af68d3051d0413b9",
+        "type": "function",
+        "z": "f324e258ea2e300e",
+        "name": "",
+        "func": "if (msg.payload.length == 0){\n    // NO API-key found\n    msg.payload = 'API key is invalid.';\n    return [msg, null];\n} else {\n    msg.payload = msg.original_msg;\n    return [null, msg];\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 80,
+        "wires": [
+            [
+                "db6170c8d607db0c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "923c98efc99ffa17",
+        "type": "function",
+        "z": "f324e258ea2e300e",
+        "name": "",
+        "func": "msg.original_msg = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "bca45c0b0b96f9b0"
+            ]
+        ]
+    },
+    {
+        "id": "405e91369f423292",
+        "type": "tab",
+        "label": "BarryBox",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "092ef13e9f9c8fe9",
+        "type": "http in",
+        "z": "405e91369f423292",
+        "name": "",
+        "url": "/barrybox",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "45129a3d61c5308b"
+            ]
+        ]
+    },
+    {
+        "id": "ff4a1df23c6c3003",
+        "type": "mqtt out",
+        "z": "405e91369f423292",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "91478dbd.3a542",
+        "x": 1190,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c93798bf6f7d6131",
+        "type": "json",
+        "z": "405e91369f423292",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 730,
+        "y": 260,
+        "wires": [
+            [
+                "75d67e727f3fa96b"
+            ]
+        ]
+    },
+    {
+        "id": "89d37c6dcd531a63",
+        "type": "http response",
+        "z": "405e91369f423292",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1200,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e4c90a82064d622e",
+        "type": "template",
+        "z": "405e91369f423292",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{error}}",
+        "output": "str",
+        "x": 1060,
+        "y": 320,
+        "wires": [
+            [
+                "89d37c6dcd531a63"
+            ]
+        ]
+    },
+    {
+        "id": "c3687ffbcab19987",
+        "type": "http response",
+        "z": "405e91369f423292",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1200,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2b9953a245c2a059",
+        "type": "template",
+        "z": "405e91369f423292",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Succesfully processed request.",
+        "output": "str",
+        "x": 1060,
+        "y": 200,
+        "wires": [
+            [
+                "c3687ffbcab19987"
+            ]
+        ]
+    },
+    {
+        "id": "fe1130c4133224ec",
+        "type": "json",
+        "z": "405e91369f423292",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 1050,
+        "y": 260,
+        "wires": [
+            [
+                "ff4a1df23c6c3003"
+            ]
+        ]
+    },
+    {
+        "id": "35d6e08bda1cde7d",
+        "type": "mysql",
+        "z": "405e91369f423292",
+        "mydb": "cccc3214.41bd",
+        "name": "",
+        "x": 810,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "05b33b98535451dc",
+        "type": "template",
+        "z": "405e91369f423292",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "INSERT INTO BarryBoxClients (client, status, alias)\nVALUES (\"{{client}}\", \"{{status}}\", \"{{alias}}\")\nON DUPLICATE KEY UPDATE status=\"{{status}}\"",
+        "output": "str",
+        "x": 660,
+        "y": 620,
+        "wires": [
+            [
+                "35d6e08bda1cde7d"
+            ]
+        ]
+    },
+    {
+        "id": "f5408511323f62f2",
+        "type": "mqtt in",
+        "z": "405e91369f423292",
+        "name": "",
+        "topic": "barrybox/+/connection",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "91478dbd.3a542",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 620,
+        "wires": [
+            [
+                "5722b987a433cac5"
+            ]
+        ]
+    },
+    {
+        "id": "0e82b8ce95243f8c",
+        "type": "http in",
+        "z": "405e91369f423292",
+        "name": "",
+        "url": "/barrybox",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 250,
+        "y": 480,
+        "wires": [
+            [
+                "5e44648189377c5a"
+            ]
+        ]
+    },
+    {
+        "id": "6d29b9374ca92ee4",
+        "type": "http response",
+        "z": "405e91369f423292",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1200,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5722b987a433cac5",
+        "type": "function",
+        "z": "405e91369f423292",
+        "name": "",
+        "func": "msg.client = msg.topic.replace('barrybox/','').replace('/connection','');\nmsg.status = msg.payload;\n\nmsg.alias = msg.client.charAt(0).toUpperCase() + msg.client.slice(1);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 620,
+        "wires": [
+            [
+                "05b33b98535451dc"
+            ]
+        ]
+    },
+    {
+        "id": "03e7a5182e3619a3",
+        "type": "template",
+        "z": "405e91369f423292",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "SELECT status, alias FROM BarryBoxClients\nWHERE client=\"{{client}}\";",
+        "output": "str",
+        "x": 780,
+        "y": 440,
+        "wires": [
+            [
+                "73d353a3687da190"
+            ]
+        ]
+    },
+    {
+        "id": "aa2d8f32656a8d80",
+        "type": "http response",
+        "z": "405e91369f423292",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 780,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "73d353a3687da190",
+        "type": "mysql",
+        "z": "405e91369f423292",
+        "mydb": "cccc3214.41bd",
+        "name": "",
+        "x": 910,
+        "y": 440,
+        "wires": [
+            [
+                "a4857d586fc9cd17"
+            ]
+        ]
+    },
+    {
+        "id": "a4857d586fc9cd17",
+        "type": "function",
+        "z": "405e91369f423292",
+        "name": "",
+        "func": "if (msg.payload[0]){\n    msg.payload = msg.payload[0];\n} else {\n    msg.payload = {\"error\": \"Client not found.\"};\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 440,
+        "wires": [
+            [
+                "6d29b9374ca92ee4"
+            ]
+        ]
+    },
+    {
+        "id": "e63035d83e93d62d",
+        "type": "mysql",
+        "z": "405e91369f423292",
+        "mydb": "cccc3214.41bd",
+        "name": "",
+        "x": 870,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8090b2a1913ad865",
+        "type": "template",
+        "z": "405e91369f423292",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "INSERT INTO BarryBoxLogs (client, type, data, lang)\nVALUES (\"{{payload.client}}\",\"{{payload.type}}\", \"{{payload.text}}\", \"{{payload.language}}\");",
+        "output": "str",
+        "x": 740,
+        "y": 180,
+        "wires": [
+            [
+                "e63035d83e93d62d"
+            ]
+        ]
+    },
+    {
+        "id": "5233f481a8fd789c",
+        "type": "function",
+        "z": "405e91369f423292",
+        "name": "",
+        "func": "\nif (!msg.payload.client || ! /^[a-z0-9]+$/i.test(msg.payload.client)) {\n    msg.payload = \"Invalid client name!\";\n    return [null, msg];\n} else {\n    msg.client = msg.payload.client;\n    return [msg, null];\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 480,
+        "wires": [
+            [
+                "03e7a5182e3619a3"
+            ],
+            [
+                "aa2d8f32656a8d80"
+            ]
+        ]
+    },
+    {
+        "id": "75d67e727f3fa96b",
+        "type": "function",
+        "z": "405e91369f423292",
+        "name": "",
+        "func": "if (!(msg.payload.type == \"say\" || msg.payload.type == \"soundboard\" || msg.payload.type == \"stream\") || msg.payload.client == \"\" || msg.payload.text == \"\"){\n    msg.error = \"Invalid request.\";\n    return [null, msg];\n}\n\nmsg.payload.client = msg.payload.client.toLowerCase();\n\nif (msg.payload.text.length > 5000){\n    msg.error = \"Character limit exceeded.\";\n    return [null, msg];\n}\n\nvar newMsg = {payload: {}};\nnewMsg.topic = \"barrybox/\" + msg.payload.client + \"/\" + msg.payload.type;\n\nif (msg.payload.type == \"say\"){\n    newMsg.payload.language = msg.payload.language;\n    newMsg.payload.text = msg.payload.text;\n} else if (msg.payload.type == \"soundboard\" || msg.payload.type == \"stream\"){\n    newMsg.payload = msg.payload.text;\n}\n\nnewMsg.res = msg.res;\nreturn [newMsg, null];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 260,
+        "wires": [
+            [
+                "2b9953a245c2a059",
+                "fe1130c4133224ec"
+            ],
+            [
+                "e4c90a82064d622e"
+            ]
+        ]
+    },
+    {
+        "id": "5e44648189377c5a",
+        "type": "subflow:f324e258ea2e300e",
+        "z": "405e91369f423292",
+        "name": "Check API-key",
+        "x": 440,
+        "y": 480,
+        "wires": [
+            [
+                "5233f481a8fd789c"
+            ]
+        ]
+    },
+    {
+        "id": "45129a3d61c5308b",
+        "type": "subflow:f324e258ea2e300e",
+        "z": "405e91369f423292",
+        "name": "Check API-key",
+        "x": 560,
+        "y": 260,
+        "wires": [
+            [
+                "8090b2a1913ad865",
+                "c93798bf6f7d6131"
+            ]
+        ]
+    },
+    {
+        "id": "91478dbd.3a542",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt.joszuijderwijk.nl",
+        "port": "8883",
+        "tls": "",
+        "clientid": "server_berenhuis",
+        "autoConnect": true,
+        "usetls": true,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cccc3214.41bd",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "mariadb",
+        "port": "3306",
+        "db": "jos-db",
+        "tz": "",
+        "charset": "UTF8"
+    }
 ]
