@@ -91,5 +91,34 @@ $(document).ready(function () {
 				//console.log(data);
 
 			});
+		}),
+		
+		$('#example-tts').click(function() {
+			
+			data = {
+				engine: 'Google',
+				data: {
+					'text': $('#message').val(),
+					'voice':$('#language').val()
+				}
+			};
+			
+			console.log(data);
+
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json; charset=utf-8",
+				url: 'https://api.soundoftext.com/sounds',
+				data: JSON.stringify(data)
+			}).done(function (data) {
+				if(data.success){
+					$.ajax({
+						type: 'GET',
+						url: 'https://api.soundoftext.com/sounds/' + data.id
+					}).done(function (mp3_data) {
+						new Audio(mp3_data.location).play();
+					});
+				}
+			});
 		})
 });

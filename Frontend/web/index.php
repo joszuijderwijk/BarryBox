@@ -73,68 +73,73 @@
 					<div class="form-group col-md-2 mb-3" id="lang-group">
 						<select id="language" name="language" class="form-control" style="height:48px;">
 							<optgroup label="Populair">
-								<option>nl</option>
-								<option>en</option>
-								<option>de</option>
-								<option>fr</option>							
-								<option>it</option>
+								<option>nl-NL</option>
+								<option>en-GB</option>
+								<option>de-DE</option>
+								<option>fr-FR</option>							
+								<option>it-IT</option>
 							</optgroup>
 							<optgroup label="Alles">
-								<option>af</option>
+								<option>af-ZA</option>
 								<option>sq</option>
-								<option>ar</option>
+								<option>ar-AE</option>
 								<option>hy</option>
-								<option>az</option>
-								<option>eu</option>
-								<option>bg</option>
-								<option>ca</option>
-								<option>hr</option>
-								<option>cs</option>
-								<option>da</option>
-								<option>nl</option>
-								<option>en</option>
+								<option>bn-BD</option>
+								<option>bn-IN</option>
+								<option>bs</option>
+								<option>my</option>
+								<option>ca-ES</option>
+								<option>hr-HR</option>
+								<option>cs-CZ</option>
+								<option>da-DK</option>
+								<option>nl-NL</option>
+								<option>en-AU</option>
+								<option>en-GB</option>
+								<option>en-US</option>
+								<option>eo</option>
 								<option>et</option>
-								<option>tl</option>
-								<option>fi</option>
-								<option>fr</option>
-								<option>gl</option>
-								<option>ka</option>
-								<option>de</option>
-								<option>el</option>
-								<option>ht</option>
-								<option>iw</option>
-								<option>hi</option>
-								<option>hu</option>
-								<option>is</option>
-								<option>id</option>
-								<option>ga</option>
-								<option>it</option>
-								<option>ja</option>
-								<option>ko</option>
+								<option>fil-PH</option>
+								<option>fi-FI</option>
+								<option>fr-FR</option>
+								<option>fr-CA</option>
+								<option>de-DE</option>
+								<option>el-GR</option>
+								<option>gu</option>
+								<option>hi-IN</option>
+								<option>hu-HU</option>
+								<option>is-IS</option>
+								<option>id-ID</option>
+								<option>it-IT</option>
+								<option>ja-JP</option>
+								<option>kn</option>
+								<option>km</option>
+								<option>ko-KR</option>
+								<option>la</option>
 								<option>lv</option>
-								<option>lt</option>
 								<option>mk</option>
-								<option>ms</option>
-								<option>mt</option>
-								<option>no</option>
-								<option>fa</option>
-								<option>pl</option>
-								<option>pt</option>
-								<option>ro</option>
-								<option>ru</option>
-								<option>sr</option>
-								<option>sk</option>
-								<option>sl</option>
-								<option>es</option>
+								<option>ml</option>
+								<option>mr</option>
+								<option>ne</option>
+								<option>nb-NO</option>
+								<option>pl-PL</option>
+								<option>pt-BR</option>
+								<option>ro-RO</option>
+								<option>ru-RU</option>
+								<option>sr-RS</option>
+								<option>si</option>
+								<option>sk-SK</option>
+								<option>es-MX</option>
+								<option>es-ES</option>
 								<option>sw</option>
-								<option>sv</option>
-								<option>th</option>
-								<option>tr</option>
-								<option>uk</option>
+								<option>sv-SE</option>
+								<option>ta</option>
+								<option>te</option>
+								<option>th-TH</option>
+								<option>tr-TR</option>
+								<option>uk-UA</option>
 								<option>ur</option>
-								<option>vi</option>
+								<option>vi-VN</option>
 								<option>cy</option>
-								<option>yi</option>
 							</optgroup>
 						</select>
 					</div>
@@ -142,7 +147,7 @@
 
 				<div class="form-group row">
 					<div class="col-auto" style="width: 100%; text-align:right;">
-						<button disabled type="button" id="example-tts" class="btn btn-secondary"><i class="fa fa-play"></i> Voorbeeld</button>
+						<button type="button" id="example-tts" class="btn btn-secondary"><i class="fa fa-play"></i> Beluister</button>
 						<button type="submit" id="submit" name="submit" class="btn btn-primary" style="width:150px;">Verstuur</button>
 					</div>
 				</div>
