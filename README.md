@@ -1,16 +1,37 @@
 # BarryBox
-BarryBox is an MQTT controlled Text-to-Speech Speaker. It is connected to a frontend from which you can directly send messages and (predefined) sounds to the speaker. My personal BarryBox is hosted at: https://barrybox.hetberenhuis.nl.
+BarryBox is an MQTT controlled Text-to-Speech speaker. It is connected to a frontend from which you can directly send messages and sounds (from a soundboard) to the speaker. My personal BarryBox is hosted at: https://barrybox.nl/
 
 <img src="https://i.imgur.com/nki11Zw.jpg" alt="BarryBox" width="600"/>
 
+The BarryBox has the following features:
+  * You can setup WiFi credentials and a username on the first startup;
+  * Receive messages (audio stream / TTS message) over MQTT;
+  * Play a sound at startup;
+  * Sending its status (online / offline);
+  * Queueing audio streams that it has to play;
+  * Stop the currently playing stream if you press the button;
+  * Clear the queue of streams if you press the button long.
+
+The backend adds the following features:
+  * Make HTTP endpoints available for sending messages and obtaining the status;
+  * Save incoming messages into a database;
+  * Restricting access with an API key;
+  * Automatically register newly connected BarryBoxes by username.
+
+With the frontend you can easily access any BarryBox over the web.
+
+# Demo
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/L5berj419ZM/0.jpg)](http://www.youtube.com/watch?v=L5berj419ZM "BarryBox: TTS WiFi Speaker")
+
+
 ## Hardware
 
-The BarryBox is based on an ESP-32 microcontroller, which controls a PCM5102 DAC.
+The BarryBox is based on an ESP32 microcontroller, which controls a PCM5102 DAC.
 
 <table>
   <tr>
-    <td valign="top"><img src="https://i.imgur.com/YZvjGPT.jpg"/></td>
-    <td valign="top"><img src="https://i.imgur.com/uDoUA4R.jpg"/></td>
+    <td valign="top"><img src="https://i.imgur.com/L86SzJb.png"/></td>
+    <td valign="top"><img src="https://i.imgur.com/l439Zwu.png"/></td>
   </tr>
 </table>
 
@@ -19,7 +40,7 @@ The BarryBox is based on an ESP-32 microcontroller, which controls a PCM5102 DAC
 1. Install the [ESP32 Arduino core](https://github.com/espressif/arduino-esp32) from the Arduino Boards Manager.
 2. Install the required libraries from the Library Manager:
     - [ESP32-audioI2S](https://github.com/schreibfaul1/ESP32-audioI2S)
-    - [WiFiManager-ESP32] (https://github.com/tzapu/WiFiManager)[^1]
+    - [WiFiManager-ESP32](https://github.com/tzapu/WiFiManager)
     - [esp8266-google-tts](https://github.com/horihiro/esp8266-google-tts)
     - [Arduino Client for MQTT](https://github.com/knolleary/pubsubclient)
     - [ArduinoJson](https://github.com/bblanchon/ArduinoJson)
