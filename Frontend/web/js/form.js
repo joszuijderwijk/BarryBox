@@ -53,7 +53,7 @@ $(document).ready(function () {
 			} else {
 
 				$("#firstrow").append(
-					'<div class="alert alert-success alert-dismissible fade show" style="margin-left:10px;width:98%;" role="alert">' + data.result +
+					'<div class="alert alert-success alert-dismissible fade show" style="margin-left:5px;width:98%;" role="alert">' + data.result +
 					'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
 				);
 
