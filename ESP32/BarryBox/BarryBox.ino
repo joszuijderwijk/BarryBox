@@ -240,7 +240,7 @@ bool isValidLanguage(const char *language)
 }
 
 // Handle incoming messages
-void callback(char *topic, byte *payload, unsigned int len)
+void callback(char *topic, unsigned char *payload, unsigned int len)
 {
 
   String msg = ""; // payload
